@@ -13,6 +13,11 @@ export default function Index() {
     <Layout>
       <h1>My Blog</h1>
       <ul>
+        <li>
+          <Link href="/batman-tv-shows">
+            <a>Batman tv shows</a>
+          </Link>
+        </li>
         <PostLink id="hello-next.js" />
         <PostLink id="learn-next.js" />
         <PostLink id="deploy-next.js" />
