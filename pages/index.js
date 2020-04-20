@@ -1,23 +1,28 @@
 import Layout from "../components/MyLayout";
 import Link from "next/link";
 
-const PostLink = props => (
+
+const LinkItem = props => (
   <li>
-    <Link href={"/p/[id]"} as={`/p/${props.id}`}>
-      <a>{props.id}</a>
+    <Link href={props.to} as={props.as}>
+      <a>{props.children}</a>
     </Link>
   </li>
 );
+
+const PostLink = props => (
+  <LinkItem to={"/p/[id]"} as={`/p/${props.id}`}>
+    {props.id}
+  </LinkItem>
+);
+
 export default function Index() {
   return (
     <Layout>
       <h1>My Blog</h1>
       <ul>
-        <li>
-          <Link href="/batman-tv-shows">
-            <a>Batman tv shows</a>
-          </Link>
-        </li>
+        <LinkItem to="/batman-tv-shows">Batman tv shows</LinkItem>
+        <LinkItem to="/quotes">Quotes</LinkItem>
         <PostLink id="hello-next.js" />
         <PostLink id="learn-next.js" />
         <PostLink id="deploy-next.js" />
