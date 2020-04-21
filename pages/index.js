@@ -19,6 +19,7 @@ const PostLink = props => (
 export default function Index() {
   return (
     <Layout>
+      test
       <h1>My Blog</h1>
       <ul>
         <LinkItem to="/batman-tv-shows">Batman tv shows</LinkItem>
